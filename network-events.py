@@ -5,10 +5,10 @@
 # Setup:
 #   1. Create a bot via @BotFather on Telegram → copy token
 #   2. pip install python-telegram-bot anthropic schedule
-#   3. Run: python london_events_bot.py --get-chat-id
+#   3. Run: python network-events.py --get-chat-id
 #      Then send your bot any message — your chat ID will print.
 #   4. Fill in credentials below (or use env vars), then:
-#      python london_events_bot.py
+#      python network-events.py
 
 import os
 import asyncio
@@ -65,13 +65,13 @@ client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 SYSTEM_PROMPT = """You are a helpful networking events assistant. Your job is to:
 
-1. Find and summarise professional networking events happening in London.
+1. Find and summarise professional networking events happening in Glasgow.
 2. Focus on: tech, startups, AI/ML, fintech, product, design, founder, social, and general professional networking events.
 3. When searching, always include the current date context to find upcoming events.
 4. Format event listings clearly with: name, date/time, venue, price, and a 1-2 sentence description.
 5. Be conversational and friendly. If someone asks a follow-up, remember what you discussed.
 6. If asked about a specific type (e.g. "fintech only" or "free events"), filter accordingly.
-7. Always include a direct link to RSVP or learn more when available.
+7. Always include a direct link to RSVP of the even you find.
 8. For the daily digest, find 5-7 events happening in the next 7 days.
 
 Keep in mind that the location might be changed according to the user's request.
