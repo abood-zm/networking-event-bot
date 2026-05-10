@@ -1,1 +1,1 @@
-worker: python london_events_bot.py
+worker: python network-events.py
